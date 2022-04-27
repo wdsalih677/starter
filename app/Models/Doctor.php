@@ -10,14 +10,15 @@ class Doctor extends Model
     protected $table = "doctors";
     protected $fillable = ["name","title","gender","status","hospital_id","medical_id","created_at","updated_at"];
     protected $hidden =["created_at","updated_at",];
-    public $timestamp=true;
-    ##################################################################
+    public $timestamp =true;
+    ###########################Scopes#######################################
     protected static function boot()
     {
          parent::boot();
         static::addGlobalScope(new doctorScope);
     }
-    ##################################################################
+    #############################Scopes#####################################
+    #############################has through#####################################
     public function scopeInvalid($query){
         $query->whereNotNull('name');
 

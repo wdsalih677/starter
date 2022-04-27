@@ -88,4 +88,8 @@ Route::post('admin/login','Auth\CustomController@checkAdminLogin')->name('save.a
     Route::get('get_inactive','Relations\RelationController@getInactive');
     ######### end has one through #####
     ######################## End relation Routes ##############################
+    ######################## Start Accessore Routes ##############################
+    Route::get('accessore','Relations\RelationController@getAccessoreDoctor');
+
+    ######################## End Accessore Routess ###############################
 

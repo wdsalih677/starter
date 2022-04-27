@@ -146,5 +146,8 @@ class Relationcontroller extends Controller
             return Doctor::withoutGlobalScope(doctorScope::class)->get();
         }
         ################ Has 1 through ##################
+        public function getAccessoreDoctor(){
+            return Patient::select('id','name','gender')->get();
+        }
 
 }

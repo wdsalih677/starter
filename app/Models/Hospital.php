@@ -13,4 +13,8 @@ class Hospital extends Model
     public function doctor(){
         return $this -> hasMany('App\Models\Doctor','hospital_id','id');
     }
+    public function setNameAttribute($value){
+        //method to set data in db captal
+        $this -> name = strtoupper($value);
+    }
 }
